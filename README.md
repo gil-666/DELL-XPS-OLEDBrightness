@@ -13,6 +13,14 @@ A macOS kernel extension that enables native brightness control for the OLED dis
 
 **The kext may work on other similar Dell models. Test at your own risk.**
 
+## Prerequisites
+
+Requires **WhateverGreen**
+
+## Installation
+
+Drag prebuilt kext into your OC Kexts folder, then enable under **Kernel -> Add**
+
 ## The Problem
 
 The Dell XPS 15 7590's 4K OLED panel has no LED backlight. macOS controls LCD brightness by writing to the Intel GPU's BLC (BackLight Control) PWM registers via `AppleBacklight` and WhateverGreen. This works for IPS/LCD panels that have a physical backlight, but OLED panels control luminance per-pixel through an embedded timing controller (TCON) — the BLC PWM writes have no visible effect.
@@ -61,14 +69,6 @@ On startup, the kext performs the Intel HDR TCON enable sequence (matching the L
 | BLC_PWM_CTL1 | 0xC8250 | Enable bit (bit 31) |
 | BLC_PWM_FREQ | 0xC8254 | Max duty cycle / period (WhateverGreen sets to 120000) |
 | BLC_PWM_DUTY | 0xC8258 | Current brightness duty cycle (written by WhateverGreen) |
-
-## Prerequisites
-
-Requires **WhateverGreen**
-
-## Installation
-
-Drag prebuilt kext into your OC Kexts folder, then enable under **Kernel -> Add**
 
 ### Verify (Optional step if not working)
 
