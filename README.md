@@ -1,4 +1,4 @@
-# OLEDBrightness
+# DELL-XPS-OLEDBrightness
 
 A macOS kernel extension that enables native brightness control for the OLED display on the **Dell XPS 15 7590** Hackintosh. Works with the macOS brightness slider, keyboard brightness keys, and a CLI tool.
 
