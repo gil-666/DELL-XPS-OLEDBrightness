@@ -29,7 +29,7 @@ Without this kext, the macOS brightness slider and keyboard brightness keys do n
 
 ## How It Works
 
-The Samsung ATNA56WR04 OLED panel supports **Intel HDR TCON brightness control** via the eDP AUX channel. The panel's TCON accepts brightness commands as a nits value written to **DPCD register 0x354** (the Intel HDR TCON brightness register). These values were discovered through dumping the DPCD binary values in Linux, even though it seems easy this process was not trivial as it required a lot of trial and error as the display requires additional prep before writing brightness values to the screen.
+The Samsung ATNA56WR04 OLED panel supports **Intel HDR TCON brightness control** via the eDP AUX channel. The panel's TCON accepts brightness commands as a nits value written to **DPCD register 0x354** (the Intel HDR TCON brightness register). These values were discovered through dumping the DPCD binary values in Linux, although it seems easy, **this process was not trivial**, it required a lot of trial and error as the display requires additional prep before writing brightness values to the screen.
 
 This kext bridges macOS brightness changes to the OLED panel through the following mechanism:
 
